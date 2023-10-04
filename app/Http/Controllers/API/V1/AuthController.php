@@ -16,7 +16,7 @@ class AuthController extends Controller
         $fields = $request->validate([
             'first_name' =>'required|string',
             'last_name' => 'required|string',
-            'bi' => 'required|string',
+            'birthday' => 'required|string',
             'gender' => 'required|string',
             'email' => 'required',
             'phone' => 'required',
@@ -27,7 +27,7 @@ class AuthController extends Controller
         $admin = Admin::create([
             'first_name' =>$fields['first_name'],
             'last_name' =>$fields['last_name'],
-            'bi' =>$fields['bi'],
+            'birthday' =>$fields['birthday'],
             'gender' =>$fields['gender'],
             'email' =>$fields['email'],
             'phone' =>$fields['phone'],
@@ -45,3 +45,4 @@ class AuthController extends Controller
         return response($response, 201);
     }
 }
+//how to let this api response a json file?
